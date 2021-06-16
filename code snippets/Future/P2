@@ -1,0 +1,46 @@
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Failure, Success}
+// display palindrome 3 digit numbers
+@main def multipleFutures1 =
+
+  def palindrome(num : Int,seq : Int) = {
+    val givenNum : String = (num).toString;
+    //println("number to string : "+givenNum);
+    var revNum : String = givenNum.reverse;
+    //println("reverse number to string : "+revNum);
+    if(givenNum.equals(revNum)){
+      println(seq.toString+"  Palindrome : "+givenNum);
+    }
+    else {
+      println(seq.toString+"  Not Palindrome : "+givenNum);
+    }
+  }
+  //Case 1
+  Future{ Thread.sleep(250); palindrome(373,1)  }
+  Future{ Thread.sleep(200); palindrome(629,2)  }
+  Future{ Thread.sleep(250); palindrome(909,3)  }
+  
+  
+  //Case 2
+  /*
+  val f1 = Future{ Thread.sleep(500); 373  }
+  val f2 = Future{ Thread.sleep(200); 629  }
+  val f3 = Future{ Thread.sleep(250); 909  }
+  
+  val resp = 
+    for
+      r1 <- f1 
+      r2 <- f2
+      r3 <- f3
+    yield
+      palindrome(r1,1)
+      palindrome(r2,2)
+      palindrome(r3,3)
+  
+  resp.onComplete{
+    case Success(x)=>;
+    case Failure(e) =>
+      e.printStackTrace
+  }*/
+  Thread.sleep(2000)
