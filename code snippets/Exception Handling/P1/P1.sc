@@ -30,12 +30,12 @@ def tryCatch(a: Int, b: Int): Int = {
 
 object Main{
   def main(args: Array[String]) = {
-        var sum = tryCatch(50,5)
-        println("Sum = "+sum)
+        var division = tryCatch(50,5)
+        println("Division = "+division)
         
         println("\n")
-        sum = tryCatch(50,0)
-        println("Sum = "+sum)
+        division = tryCatch(50,0)
+        println("Division = "+division)
     }
 }
 
