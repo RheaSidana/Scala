@@ -1,16 +1,17 @@
-trait MyTrait
+trait Animal
 {
-    def pet() : Unit
+    def pet_animal() : Unit
     def pet_color() : Unit
+    def pet_sound() : Unit 
 }
-  
+
 // MyClass inherits trait
-class MyClass extends MyTrait
+class Dog extends Animal
 {
       
     // Implementation of methods of MyTrait
-    def pet() = {
-        println("Pet: Dog")
+    def pet_animal() = {
+        println("Pet_animal: Dog")
     }
       
     def pet_color() = {
@@ -21,6 +22,10 @@ class MyClass extends MyTrait
     def pet_name() = {
         println("Pet_name: Dollar")
     }
+  
+    def pet_sound() = {
+        println("Pet_sound : Bhow Bhow")
+    }
 } 
   
 object Main 
@@ -28,9 +33,10 @@ object Main
       
     // Main method
     def main(args: Array[String]) = {
-        val obj = new MyClass();
-        obj.pet();
+        val obj = new Dog();
+        obj.pet_animal();
         obj.pet_color();
         obj.pet_name();
+        obj.pet_sound();
     }
 }
